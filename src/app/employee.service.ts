@@ -1,13 +1,14 @@
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Employee} from './employee';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
-})
+})  // If this not exists - add provider into app.modules.ts @NgModule providers
 export class EmployeeService {
-  private apiServerUrl = '';
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {
   }
